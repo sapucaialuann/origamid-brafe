@@ -1,0 +1,538 @@
+/*MENU
+0 - Geral
+1 - Menu
+2 - Section Intro
+3 - Section História
+4 - Section Info
+5 - Section Loja
+6 - Section Assine
+7 - Footer
+*/
+
+/*0 - Geral*/
+
+:root {
+    --primary-black: #333;
+    --secondary-black: #252525;
+    --primary-white: #fafafa;
+    --primary-grey: #e7e4d8;
+    --grey-footer: #d6d3c8;
+    /*after class*/
+    --circle-brown: #4a2805;
+    --circle-orange: #ca6829;
+    --circle-moustard: #d5a544;
+}
+
+body {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* .clear:after, .clear:before {
+    content:"";
+    display: table;
+    clear: both;
+} */
+
+/*1 - Menu*/
+    .menu {
+        width: 100%;
+        background-color: var(--secondary-black);
+    }
+    .menu .container {
+        width: 100%;
+    }
+
+    .menu-nav {
+        padding: 15px 50px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    @media only screen and (max-width: 760px) {
+        .menu-nav {
+            height: 100px;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+    }
+
+    @media only screen and (max-width: 320px) {
+        .menu-nav {
+            padding: 20px 25px;
+            
+        }
+        .menu-nav ul a{
+            align-self: center;
+        }
+        .menu-nav ul {
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 15px;
+            
+        }
+        
+    }
+
+    @media only screen and (max-width: 275px) {
+        .menu-nav ul {
+            flex-direction: column;
+        }
+    }
+
+    .menu ul {
+        display: flex;
+    }
+
+    .menu ul li a {
+        font-family: Georgia, serif;
+        color: var(--primary-white);
+        text-decoration: none;
+    }
+
+    .menu-nav li a {
+        padding: 0 15px;
+    }
+
+    .menu-nav ul li:after {
+        content:"";
+        display: block;
+        background-color: var(--primary-white);
+        height: 5px;
+        width: 0;
+        transition: .6s;
+    }
+
+    .menu-nav ul li:hover:after {
+        display: block;
+        width: 100%;
+        transition: .6s;
+    }
+
+
+
+    /*2 - Section Intro*/
+
+.intro {
+    width: 100%;
+    text-align: center;
+    color: var(--primary-white);
+    background: url(../assets/img/bg-intro.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding: 150px 0px;
+    
+}
+
+.intro h1 {
+    text-transform: uppercase;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: Georgia, serif;
+}
+
+.intro h1:after {
+    content: "";
+    display: block;
+    height: 5px;
+    width: 20px;
+    background-color: var(--primary-white);
+    margin: 10px auto;
+}
+
+.intro h1:hover:after {
+    width: 50%;
+    transition: .9s;
+}
+
+.intro p {
+    font-size: 1.125em;
+    font-style: italic;
+    font-family: Georgia, serif
+}
+
+@media only screen and (max-width: 760px) {
+    .intro {
+        padding: 120px 0;
+    }
+    .intro h1{
+        font-size: 2.0em;
+    }
+    .intro p {
+        font-size: 0.75em;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .intro {
+        padding: 75px 0;
+    }
+    .intro h1 {
+        font-size: 1.5em;
+    }
+}
+
+
+
+/*3 - Section História*/
+
+.sobre {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 960px;
+}
+
+.sobre h2 {
+    font-family: Georgia, serif;
+    font-size: 2.25em;
+    font-weight:bold;
+    text-align: center;
+}
+
+.sobre-item {
+    /* border: 1px solid  blue; */
+    padding: 20px 20px;
+    display: flex;
+}
+
+.sobre-item img {
+    width: 60%;
+    /* padding: 45px 0; */
+}
+
+.sobre h2, .sobre p {
+    padding: 60px 0;
+}
+
+.item-um {
+    justify-content: flex-start;
+}
+
+.item-dois {
+    justify-content: flex-end;
+}
+
+
+.sobre-item h3 {
+    font-size: 2.25em;
+    line-height: 1em;
+    background: var(--secondary-black);
+    color: var(--primary-white);
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    font-family: Georgia, serif;
+    position: absolute;
+    padding: 10px 20px;
+}
+
+.sobre p {
+    max-width: 720px;
+    text-align: center;
+    font-size: 1.125em;
+    font-style: italic;
+    line-height: 1.4em;
+}
+
+
+@media only screen and (max-width: 760px) {
+    .sobre h2, .sobre .sobre-item,  .sobre p {
+        padding: 10px 0;
+    }
+    .sobre {
+        border: 1px solid green;
+        padding: 45px;
+    }
+    .sobre-item {
+        justify-content: space-around;
+        padding: 20px;
+        font-size: 0.6em;
+    }
+    .sobre-item img{
+        width: 100%;
+    }
+    .item-um h3{
+        align-self: flex-end;
+        left: 0;
+    }
+    .item-dois h3{
+        align-self: flex-end;
+        right: 0;
+    }
+}
+    
+@media only screen and (max-width: 520px) {
+    .sobre {
+        padding: 10px;
+    }
+    .sobre-item{
+        width: 100%;
+    }
+    .sobre-item img{
+        width: 100%;
+    }
+    .sobre-item h2 {
+        padding: 0 55px;
+    }
+    .sobre p{
+        font-size: 0.7em;
+        padding: 0 15px;
+    }
+}
+
+
+/*CASA*/
+
+
+
+/*4 - Section Info*/
+
+.produtos {
+    background-color: var(--primary-grey);
+    padding: 150px 30px;
+    text-align: center;
+    font-family: Georgia, serif;
+    /* border: 3px solid red; */
+}
+
+.produtos-tudo {
+    /* border:3px solid #ca6829; */
+    margin-right: 150px;
+}
+
+.produtos-item h2 {
+    text-align: center;
+    position: relative;
+    display: block;
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.produtos p {
+    font-size: 0.85em;
+    text-align: left;
+    position: relative;
+    display: block;
+    width: 200px;
+    height: 150px;
+    margin: 0 auto;
+}
+
+.produtos-item {
+    width: 270px;
+    float: left;
+    /* border: 3px solid red; */
+    margin-top: 30px;
+    /* margin: auto; */
+
+}
+
+.produtos-paulista:before {
+    content: "";
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: -150px;
+    left: 30%;
+    color: var(--circle-brown);
+    background-color: var(--circle-brown);
+    border: 5px solid var(--primary-grey);
+    box-shadow: 0 0 0 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.produtos-carioca:before {
+    content: "";
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: -150px;
+    left: 30%;
+    color: var(--circle-orange);
+    background-color: var(--circle-orange);
+    border: 5px solid var(--primary-grey);
+    box-shadow: 0 0 0 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.produtos-mineiro:before {
+    content: "";
+    border-radius: 50%;
+    display: block;
+    position: absolute;
+    top: -150px;
+    left: 30%;
+    color: var(--circle-moustard);
+    background-color: var(--circle-moustard);
+    border: 5px solid var(--primary-grey);
+    box-shadow: 0 0 0 5px;
+    width: 100px;
+    height: 100px;
+}
+
+.produtos a {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 150px;
+    padding: 10px 30px;
+    color: var(--primary-black);
+    border: 1px solid var(--primary-black);
+    font-size: 1.125em;
+    font-weight: bold;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: -100px;
+}
+
+.produtos a:hover {
+    color: var(--primary-grey);
+    background-color: var(--primary-black);
+    border: 1px solid var(--primary-grey);
+}
+
+/*5 - Section Loja*/
+
+.locais {
+    width: 100%;
+    font-family: Georgia, serif;
+    /* border: 3px solid aqua; */
+    margin-top: 50px;
+}
+
+.locais-div {
+    overflow: hidden;    
+}
+
+.locais img {
+    overflow: hidden;
+} 
+
+.locais-item {
+    /* border: 3px solid palevioletred; */
+    overflow: auto;
+    margin-bottom: 30px;
+}
+
+.locais-item h2 {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.locais-item p {
+    font-size: 1.25em;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.locais-item a {
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    width: 150px;
+    padding: 10px 20px;
+    color: var(--primary-black);
+    border: 1px solid var(--primary-black);
+    font-size: 1.125em;
+    font-weight: bold;
+    display: block;
+    /* margin: 0 auto; */
+    margin-top: 40px;
+}
+
+.locais-item a:hover {
+    color: var(--primary-grey);
+    background-color: var(--primary-black);
+    border: 1px solid var(--primary-grey);
+}
+
+/*6 - Section Assine*/
+ 
+.assine {
+    background-color: var(--primary-grey);
+    /* border: 3px solid red; */
+    height: 150px;
+}
+
+.assine-info {
+    padding-top: 5px;
+    width: 30%;
+}
+
+.assine-info h2 {
+    font-size: 2.25em;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.assine-info p {
+    font-style: italic;
+    color: var(--primary-black);
+}
+
+form {
+
+}
+
+
+form button {
+    font-size: 1.25em;
+    position: absolute;
+    /* display: inline; */
+    text-transform: uppercase;
+    color: var(--primary-grey);
+    background-color: var(--primary-black);
+    border: 1px solid var(--primary-grey);
+    /* padding: 3px; */
+    height: 35px;
+    margin: 0 auto;
+}
+
+form button:hover {
+    background-color: var(--grey-footer);
+    color: var(--primary-black);
+    margin: 1px solid var(--primary-black);
+}
+
+form input {
+    font-size:1.25em; 
+    height: 30px;
+    font-style: italic;
+    font-weight: initial;
+    margin: 0 auto;
+    background-color: var(--primary-grey);
+    border: 1px solid var(--primary-black);
+    font-family: Georgia, serif
+}
+
+/*7 - Footer*/
+
+.footer { 
+    background-color: var(--grey-footer);
+    padding: 50px;
+}
+
+/*Cores encontradas com o color picker
+  (https://imagecolorpicker.com)
+  bege da parte dos cafés: #e7e5d8
+  bege do email: #e9e6d7
+  footer: #d6d4c8
+  primeiro circulo (marrom): #4a2805
+  segundo circulo (laranja): #ca6829
+  terceiro circulo (mostarda): #d6a544
+ */
